@@ -1,0 +1,18 @@
+{% extends "base.html" %}
+{% block title %}Blogs{% endblock title %}
+{% block heading %}<h1>All Blogs</h1>{% endblock heading %}
+{% block content %}
+<a href="{% url 'home' %}">Return to homepage</a>
+<ul class="ulist">
+<div>
+    {% if blog_list %}
+        {% for blog in blog_list %}
+        <li><a href="{% url 'detail' blog.pk %}">{{blog.title}} {{blog.first_name}}</a></li>
+        {% endfor %}
+</ul>
+    {% else %}
+    <p>There are no blogs posted</p> 
+    {% endif %}  
+</div>
+{% endblock content %}
+

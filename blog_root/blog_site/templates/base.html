@@ -1,0 +1,19 @@
+{% load static %}
+<!DOCTYPE html>
+<html>
+<head>
+<link rel="stylesheet" type="text/css" href="{% static 'main.css' %}">  <!--make sure you import stylesheet css-->
+    <title>
+        {% block title %}Home{% endblock title %}
+    </title>
+</head>
+
+<body>
+    <h1 class='head'>
+    {% block heading %}"Welcome to the blog!"{% endblock heading %}
+    </h1>
+
+{% block content %} <a href="{% url 'list' %}"> Click here to see blogs</a>
+{% endblock content %}
+</body>
+</html>
